@@ -17,10 +17,11 @@ public class DropDownElement {
     ChromeDriver driver = new ChromeDriver();
 
     @BeforeClass
-    void setup() {
+    void setup() throws InterruptedException  {
         WebDriverManager.chromedriver().setup();
         driver.get("http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
         driver.manage().window().maximize(); //for window to maximize
+        Thread.sleep(20000);
     }
     @Test
     public void DropDown() throws InterruptedException {
@@ -49,9 +50,10 @@ public class DropDownElement {
         driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/label[2]/input")).click();
         driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/label[3]/input")).click();
 
+        //Thread.sleep(15000);
         driver.findElement(By.xpath("//*[@id=\"radio-buttons\"]/input[3]")).click();
 
-        Thread.sleep(1000);
+        Thread.sleep(20000);
 
     }
 
